@@ -1,0 +1,26 @@
+<!-- Create a constants service and show its usage in a controller. -->
+
+<html ng-app="myApp">
+	<head>
+		<title>AngularJS Service</title>
+		<script type="text/javascript" src="project1/angular.min.js"></script>
+		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>-->
+		<script type="text/javascript">
+			var module = angular.module("myApp", []);
+			
+			module.controller("newCtrl", function($scope, pi){
+				$scope.pi = pi;
+				$scope.radius = 1;
+			});
+			
+			module.constant('pi', 3.14);
+			
+		</script> 
+	</head>
+	<body>
+		<div ng-controller="newCtrl">
+			Enter Radius of Circle: <input type="text" ng-model="radius"/><br/>
+			Area of Circle: <b>{{pi*radius*radius}}</b>
+		</div>
+	</body>
+</html>
